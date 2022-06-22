@@ -1,5 +1,10 @@
 package com.cucumber.test;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 
 import com.constants.CommonFunctions;
@@ -21,7 +26,6 @@ public class CreateQuoteSteps extends CommonFunctions {
 		try
 		{
 		DriverManager(Constant.Page_Url);
-		Thread.sleep(3000);
 		ExtentReportsClass.startReport("ChromeBrowserTest", "Chrome");
 		ExtentReportsClass.test = ExtentReportsClass.extent.startTest("Launched BharatiAxa Home Page");
 		ExtentReportsClass.test.log(LogStatus.INFO, "Assert Pass as condition is True");
@@ -78,12 +82,13 @@ public class CreateQuoteSteps extends CommonFunctions {
 	public void user_Click_on_Next_Button() throws Throwable {
 		try
 		{
-		Thread.sleep(4000);
+		Thread.sleep(3000);	
 		Click(GetQuote.NextButton);
 		ExtentReportsClass.test = ExtentReportsClass.extent.startTest("Clicked on Next Button");
 		ExtentReportsClass.test.log(LogStatus.INFO, "Assert Pass as condition is True");
 		}
-		catch (Exception e) {
+		catch (StaleElementReferenceException e) {
+			//Click(GetQuote.NextButton);
 			ExtentReportsClass.endreport();
 			throw e;
 		}
@@ -96,10 +101,10 @@ public class CreateQuoteSteps extends CommonFunctions {
 		{
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Sheet1");
 		String EmailId = ExcelUtils.getCellData(1, 4);
-		//String DOB = ExcelUtils.getCellData(1, 5);
-		String Pin_Code = ExcelUtils.getCellData(1, 6);
+		String Pin_Code = ExcelUtils.getCellData(1, 5);
 		SendKeys(GetQuote.EmailId, EmailId);
-		SendKeys(GetQuote.DOB, "01/01/1995"); 
+		Click(GetQuote.Calendar);
+		Click(GetQuote.OkButton);
 		SendKeys(GetQuote.PINCODE, Pin_Code);
 		ExtentReportsClass.test = ExtentReportsClass.extent.startTest("Filled Email Address, DOB and Pincode");
 		ExtentReportsClass.test.log(LogStatus.INFO, "Assert Pass as condition is True");
@@ -132,6 +137,7 @@ public class CreateQuoteSteps extends CommonFunctions {
 		
 		try
 		{
+		//ExplicitWait(GetQuote.AllAtOnce);
 		Thread.sleep(3000);
 		Click(GetQuote.AllAtOnce);
 		ExtentReportsClass.test = ExtentReportsClass.extent.startTest("Selected how to receive benefit option");
@@ -150,12 +156,13 @@ public class CreateQuoteSteps extends CommonFunctions {
 		
 		try
 		{
-		Thread.sleep(3000);
+		ExplicitWait(GetQuote.QuoteNo);
 		String QuoteNumber=GetAttributeValue(GetQuote.QuoteNo);
-		System.out.println("Quote Number :"+QuoteNumber);
+		String[] Quote=QuoteNumber.split(":");
+		System.out.println("Quote Number :"+Quote[1].trim());
 		ExtentReportsClass.test = ExtentReportsClass.extent.startTest("Quote Number Displayed");
 		ExtentReportsClass.test.log(LogStatus.INFO, "Assert Pass as condition is True");
-		ExcelUtils.setCellData(QuoteNumber, 1, 6);
+		ExcelUtils.setCellData(Quote[1].trim(), 1, 6);
 		}
 
 		catch (Exception e) {

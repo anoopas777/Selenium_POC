@@ -100,98 +100,98 @@ formatter.match({
   "location": "CreateQuoteSteps.user_is_on_the_BharatiAxa_HomePage()"
 });
 formatter.result({
-  "duration": 14219376200,
+  "duration": 7757853900,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_clicks_on_Get_a_Quote_link()"
 });
 formatter.result({
-  "duration": 225408400,
+  "duration": 116318300,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_switch_to_new_tab_and_fill_FirstName_LastName_and_Mobile_Number()"
 });
 formatter.result({
-  "duration": 7921856700,
+  "duration": 2472265000,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
 });
 formatter.result({
-  "duration": 4235674200,
+  "duration": 3133904700,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_Fills_Email_Address_DOB_and_Pin_Code()"
 });
 formatter.result({
-  "duration": 1616915200,
+  "duration": 2710730300,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
 });
 formatter.result({
-  "duration": 4176618000,
+  "duration": 3127818000,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_Select_Buying_For_Option()"
 });
 formatter.result({
-  "duration": 788761700,
+  "duration": 822995900,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
 });
 formatter.result({
-  "duration": 4169641700,
+  "duration": 3132623600,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_Click_on_How_to_Receive_Benefit_Option()"
 });
 formatter.result({
-  "duration": 3406520900,
+  "duration": 3183491000,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
 });
 formatter.result({
-  "duration": 4125964600,
+  "duration": 3111839400,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
 });
 formatter.result({
-  "duration": 4218691400,
+  "duration": 3136846900,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
 });
 formatter.result({
-  "duration": 4142786600,
+  "duration": 3129953500,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_Gets_QuoteNumber_Displayed_on_the_screen()"
 });
 formatter.result({
-  "duration": 3249312500,
+  "duration": 1353510700,
   "status": "passed"
 });
 formatter.match({
   "location": "CreateQuoteSteps.user_Closes_Current_Window()"
 });
 formatter.result({
-  "duration": 739984600,
+  "duration": 498538000,
   "status": "passed"
 });
 });

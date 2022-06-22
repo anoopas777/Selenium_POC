@@ -9,10 +9,15 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.relevantcodes.extentreports.LogStatus;
 
 public class CommonFunctions {
@@ -53,6 +58,12 @@ protected void Click(By by)
 		driver.findElement(by).click();
 		
 }
+protected void JSExecutorClick(By by)
+{
+	WebElement wb = driver.findElement(by);
+	JavascriptExecutor js = (JavascriptExecutor)driver;
+	js.executeScript("arguments[0].click()", wb);
+}
 
 protected void SendKeys(By by,String val) throws InterruptedException
 {
@@ -60,6 +71,7 @@ protected void SendKeys(By by,String val) throws InterruptedException
 		wb.sendKeys(val);
 		
 }
+
 
 protected void CloseCurrentWindow()
 {
@@ -78,6 +90,18 @@ protected void SwitchTabs()
 {
 	 	ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
 	 	driver.switchTo().window(tabs2.get(1));
+}
+
+protected void ExplicitWait(By by)
+{
+	WebDriverWait wait = new WebDriverWait(driver,30);
+	wait.until(ExpectedConditions.presenceOfElementLocated(by));
+}
+
+protected void ImplicitWait()
+{
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	
 }
 
 }
