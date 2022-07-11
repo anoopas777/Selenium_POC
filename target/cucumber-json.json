@@ -1,0 +1,50 @@
+[
+  {
+    "line": 4,
+    "elements": [
+      {
+        "start_timestamp": "2022-07-01T13:30:49.849Z",
+        "line": 7,
+        "name": "Download and validate PDF File",
+        "description": "",
+        "id": "pdf-validation;download-and-validate-pdf-file",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6089000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User is opening and validating the PDF file",
+            "match": {
+              "location": "com.cucumber.test.PDFValidationSteps.user_downloads_and_validates_the_pdf_generated()"
+            },
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@PDFValidation"
+          }
+        ]
+      }
+    ],
+    "name": "PDF Validation",
+    "description": "",
+    "id": "pdf-validation",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/PDFValidation.feature",
+    "tags": [
+      {
+        "name": "@PDFValidation",
+        "type": "Tag",
+        "location": {
+          "line": 3,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

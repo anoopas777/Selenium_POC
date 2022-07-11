@@ -1,197 +1,150 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/Features/GetQuoteCreated.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/Features/ContactUS.feature");
 formatter.feature({
-  "comments": [
-    {
-      "line": 1,
-      "value": "#Author: Anoop A S"
-    }
-  ],
-  "line": 4,
-  "name": "Create an insurance quote",
+  "line": 3,
+  "name": "Contact Us Feature",
   "description": "",
-  "id": "create-an-insurance-quote",
+  "id": "contact-us-feature",
   "keyword": "Feature",
   "tags": [
     {
-      "line": 3,
-      "name": "@chrome"
+      "line": 2,
+      "name": "@ContactUSPage"
     }
   ]
 });
-formatter.scenario({
-  "line": 7,
-  "name": "Login to BharatiAxa website and create a quote",
+formatter.scenarioOutline({
+  "line": 5,
+  "name": "Contact Us scenario with different set of data",
   "description": "",
-  "id": "create-an-insurance-quote;login-to-bharatiaxa-website-and-create-a-quote",
-  "type": "scenario",
-  "keyword": "Scenario"
+  "id": "contact-us-feature;contact-us-scenario-with-different-set-of-data",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 8,
-  "name": "User is on the BharatiAxa HomePage",
+  "line": 6,
+  "name": "user navigates to contact us page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 9,
-  "name": "User clicks on Get a Quote link",
+  "line": 7,
+  "name": "user fills the form from given sheetname \"\u003cSheetName\u003e\" and rownumber \u003cRowNumber\u003e",
   "keyword": "When "
 });
 formatter.step({
-  "line": 10,
-  "name": "User switch to new tab and fill FirstName, LastName and Mobile Number",
-  "keyword": "Then "
+  "line": 8,
+  "name": "user clicks on send button",
+  "keyword": "And "
 });
 formatter.step({
+  "line": 9,
+  "name": "it shows a successful message \"Your message has been successfully sent to our team.\"",
+  "keyword": "Then "
+});
+formatter.examples({
   "line": 11,
-  "name": "User Click on Next Button",
-  "keyword": "Then "
+  "name": "",
+  "description": "",
+  "id": "contact-us-feature;contact-us-scenario-with-different-set-of-data;",
+  "rows": [
+    {
+      "cells": [
+        "SheetName",
+        "RowNumber"
+      ],
+      "line": 12,
+      "id": "contact-us-feature;contact-us-scenario-with-different-set-of-data;;1"
+    },
+    {
+      "cells": [
+        "Contactus",
+        "0"
+      ],
+      "line": 13,
+      "id": "contact-us-feature;contact-us-scenario-with-different-set-of-data;;2"
+    }
+  ],
+  "keyword": "Examples"
 });
-formatter.step({
-  "line": 12,
-  "name": "User Fills Email Address, DOB and Pin Code",
-  "keyword": "Then "
-});
-formatter.step({
+formatter.scenario({
   "line": 13,
-  "name": "User Click on Next Button",
-  "keyword": "Then "
+  "name": "Contact Us scenario with different set of data",
+  "description": "",
+  "id": "contact-us-feature;contact-us-scenario-with-different-set-of-data;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@ContactUSPage"
+    }
+  ]
 });
 formatter.step({
-  "line": 14,
-  "name": "User Select Buying For Option",
-  "keyword": "Then "
+  "line": 6,
+  "name": "user navigates to contact us page",
+  "keyword": "Given "
 });
 formatter.step({
-  "line": 15,
-  "name": "User Click on Next Button",
-  "keyword": "Then "
+  "line": 7,
+  "name": "user fills the form from given sheetname \"Contactus\" and rownumber 0",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "When "
 });
 formatter.step({
-  "line": 16,
-  "name": "User Click on How to Receive Benefit Option",
-  "keyword": "Then "
+  "line": 8,
+  "name": "user clicks on send button",
+  "keyword": "And "
 });
 formatter.step({
-  "line": 17,
-  "name": "User Click on Next Button",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 18,
-  "name": "User Click on Next Button",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 19,
-  "name": "User Click on Next Button",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 20,
-  "name": "User Gets QuoteNumber Displayed on the screen",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 21,
-  "name": "User Closes Current Window",
+  "line": 9,
+  "name": "it shows a successful message \"Your message has been successfully sent to our team.\"",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "CreateQuoteSteps.user_is_on_the_BharatiAxa_HomePage()"
+  "location": "ContactUs.user_navigates_to_contact_us_page()"
 });
 formatter.result({
-  "duration": 7757853900,
+  "duration": 8701277300,
   "status": "passed"
 });
 formatter.match({
-  "location": "CreateQuoteSteps.user_clicks_on_Get_a_Quote_link()"
+  "arguments": [
+    {
+      "val": "Contactus",
+      "offset": 42
+    },
+    {
+      "val": "0",
+      "offset": 67
+    }
+  ],
+  "location": "ContactUs.user_fills_the_form_from_given_sheetname_and_rownumber(String,Integer)"
 });
 formatter.result({
-  "duration": 116318300,
+  "duration": 2004056100,
   "status": "passed"
 });
 formatter.match({
-  "location": "CreateQuoteSteps.user_switch_to_new_tab_and_fill_FirstName_LastName_and_Mobile_Number()"
+  "location": "ContactUs.user_clicks_on_send_button()"
 });
 formatter.result({
-  "duration": 2472265000,
+  "duration": 4649231100,
   "status": "passed"
 });
 formatter.match({
-  "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
+  "arguments": [
+    {
+      "val": "Your message has been successfully sent to our team.",
+      "offset": 31
+    }
+  ],
+  "location": "ContactUs.it_shows_a_successful_message(String)"
 });
 formatter.result({
-  "duration": 3133904700,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CreateQuoteSteps.user_Fills_Email_Address_DOB_and_Pin_Code()"
-});
-formatter.result({
-  "duration": 2710730300,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
-});
-formatter.result({
-  "duration": 3127818000,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CreateQuoteSteps.user_Select_Buying_For_Option()"
-});
-formatter.result({
-  "duration": 822995900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
-});
-formatter.result({
-  "duration": 3132623600,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CreateQuoteSteps.user_Click_on_How_to_Receive_Benefit_Option()"
-});
-formatter.result({
-  "duration": 3183491000,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
-});
-formatter.result({
-  "duration": 3111839400,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
-});
-formatter.result({
-  "duration": 3136846900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CreateQuoteSteps.user_Click_on_Next_Button()"
-});
-formatter.result({
-  "duration": 3129953500,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CreateQuoteSteps.user_Gets_QuoteNumber_Displayed_on_the_screen()"
-});
-formatter.result({
-  "duration": 1353510700,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CreateQuoteSteps.user_Closes_Current_Window()"
-});
-formatter.result({
-  "duration": 498538000,
+  "duration": 38002500,
   "status": "passed"
 });
 });

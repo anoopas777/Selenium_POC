@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 
 import java.io.FileOutputStream;
 
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -14,34 +15,32 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
 
-	private static XSSFSheet ExcelWSheet;
-
-	private static XSSFWorkbook ExcelWBook;
-
-	private static XSSFCell Cell;
-
-	private static XSSFRow Row;
+		private static XSSFSheet ExcelWSheet;
+		private static XSSFWorkbook ExcelWBook;
+		private static XSSFCell Cell;
+		private static XSSFRow Row;
+		
 
 //This method is to set the File path and to open the Excel file, Pass Excel Path and Sheetname as Arguments to this method
 
+public static XSSFSheet getExcelWSheet() {
+			return ExcelWSheet;
+		}
+
+public static void setExcelWSheet(XSSFSheet excelWSheet) {
+			ExcelWSheet = excelWSheet;
+		}
+
 public static void setExcelFile(String Path,String SheetName) throws Exception {
 
-		try {
-
-			// Open the Excel file
-
+		try 
+		{
 		FileInputStream ExcelFile = new FileInputStream(Path);
-
-		// Access the required test data sheet
-
 		ExcelWBook = new XSSFWorkbook(ExcelFile);
-
 		ExcelWSheet = ExcelWBook.getSheet(SheetName);
-
-		} catch (Exception e){
-
+		} 
+		catch (Exception e){
 			throw (e);
-
 		}
 
 }
@@ -50,21 +49,16 @@ public static void setExcelFile(String Path,String SheetName) throws Exception {
 
 public static String getCellData(int RowNum, int ColNum) throws Exception{
 
-		try{
-
-			Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
-			
-			Cell.setCellType(Cell.CELL_TYPE_STRING);
-
-			String CellData = Cell.getStringCellValue();
-
-			return CellData;
-
-			}catch (Exception e){
-
-			return"";
-
-			}
+		try
+		{
+		Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
+		Cell.setCellType(CellType.STRING);
+		String CellData = Cell.getStringCellValue();
+		return CellData;
+		}
+		catch (Exception e){
+		return"";
+		}
 
 }
 
@@ -72,40 +66,30 @@ public static String getCellData(int RowNum, int ColNum) throws Exception{
 
 public static void setCellData(String Result,  int RowNum, int ColNum) throws Exception	{
 
-		try{
+		try
+		{
 
-			Row  = ExcelWSheet.getRow(RowNum);
-
-		Cell = Row.getCell(ColNum, Row.RETURN_BLANK_AS_NULL);
-
+		Row  = ExcelWSheet.getRow(RowNum);
+		Cell = Row.getCell(ColNum);
 		if (Cell == null) {
-
-			Cell = Row.createCell(ColNum);
-
-			Cell.setCellValue(Result);
-
-			} else {
-
-				Cell.setCellValue(Result);
-
-			}
+		Cell = Row.createCell(ColNum);
+		Cell.setCellValue(Result);
+		} 
+		else 
+		{
+		Cell.setCellValue(Result);
+		}
 
 // Constant variables Test Data path and Test Data file name
 
-				FileOutputStream fileOut = new FileOutputStream(Constant.Path_TestData + Constant.File_TestData);
-
-				ExcelWBook.write(fileOut);
-
-				fileOut.flush();
-
-				fileOut.close();
-
-			}catch(Exception e){
-
-				throw (e);
-
+	    FileOutputStream fileOut = new FileOutputStream(PropertyFileReader.Path_TestData);
+		ExcelWBook.write(fileOut);
+		fileOut.flush();
+		fileOut.close();
 		}
-
-	}
+		catch(Exception e){
+		throw (e);
+		}
+}
 
 }

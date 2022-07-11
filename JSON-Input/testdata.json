@@ -1,0 +1,43 @@
+{
+"AxaHomePage":[
+ {
+  "Fname": "ABC",
+  "MobNumber": "9110583464"
+ }
+],
+"PersonalDetailsPage1":[
+ {
+  "Lname": "XYZ"
+ }
+],
+"PersonalDetailsPage2":[
+ {
+  "Email": "abctest@gmail.com",
+  "PinCode": "600098"
+ }
+],
+"TermAmount":[
+		"₹ 1000",
+		"₹ 2000",
+		"₹ 3000"
+],
+"Premium Mode":[ 
+		"Annual",
+		"Half Yearly",
+		"Quarterly",
+		"Monthly"
+],
+"CoverageFor":[ 
+		"5 Years",
+		"10 Years",
+		"12 Years",
+		"15 Years",
+		"16 Years",
+		"20 Years",
+		"22 Years"
+],
+"PayFor":[ 
+		"5 Years",
+		"Single pay"
+]
+}
