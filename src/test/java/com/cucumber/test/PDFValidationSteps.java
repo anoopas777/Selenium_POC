@@ -11,9 +11,9 @@ import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import com.constants.CommonFunctions;
-import com.constants.PropertyFileReader;
-import com.constants.ExcelUtils;
+import com.utils.CommonFunctions;
+import com.utils.ExcelUtils;
+import com.utils.PropertyFileReader;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;

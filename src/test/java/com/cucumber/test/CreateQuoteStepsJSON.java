@@ -10,10 +10,6 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import com.constants.CommonFunctions;
-import com.constants.PropertyFileReader;
-import com.constants.ExcelUtils;
-import com.constants.ParseDynamicJson;
 import com.pom.AddOnsPage;
 import com.pom.AxaHomePage;
 import com.pom.BuyingForPage;
@@ -21,12 +17,17 @@ import com.pom.PersonalDetailsPage1;
 import com.pom.PersonalDetailsPage2;
 import com.pom.PlanSummaryPage;
 import com.pom.ReceiveBenefitsPage;
+import com.utils.CommonFunctions;
+import com.utils.ExcelUtils;
+import com.utils.ParseDynamicJson;
+import com.utils.PropertyFileReader;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CreateQuoteStepsJSON extends CommonFunctions {
+	
 
 	//Step Definition File for CreateQuoteSteps using JSON File Input
 
@@ -35,13 +36,13 @@ public class CreateQuoteStepsJSON extends CommonFunctions {
 		try
 		{
 			DriverManager(PropertyFileReader.Page_Url);
-			Assert.assertTrue(true);
+			//Assert.fail();
 		}
 		catch(Exception e)
 		{
 			throw e;
 		}
-
+		
 	}
 
 	@When("^User fills Firstname, Mobilenumber$")
@@ -72,17 +73,9 @@ public class CreateQuoteStepsJSON extends CommonFunctions {
 		{
 			JSONArray LName=ParseDynamicJson.ParseJson("Lname", PropertyFileReader.JSONFilePath);
 			String Lname = LName.getString(0);
-			//String MobNum = ExcelUtils.getCellData(1, 3);
-			//System.out.println("Mobile Number:"+MobNum);
-			//SwitchTabs();
-			//SendKeys(GetQuote.FirstName, FName);
 			SendKeys(PersonalDetailsPage1.LastName, Lname);
-			//SendKeys(GetQuote.MobileNumber, MobNum);
-			//ExtentReportsClass.test = ExtentReportsClass.extent.startTest("Filled FirstName, LastName and Mobile Number");
-			//ExtentReportsClass.test.log(LogStatus.INFO, "Assert Pass as condition is True");
 		}
 		catch (Exception e) {
-			//ExtentReportsClass.endreport();
 			throw e;
 		}
 
@@ -94,12 +87,8 @@ public class CreateQuoteStepsJSON extends CommonFunctions {
 		{
 			Thread.sleep(3000);	
 			Click(PersonalDetailsPage1.NextButton);
-			//ExtentReportsClass.test = ExtentReportsClass.extent.startTest("Clicked on Next Button");
-			//ExtentReportsClass.test.log(LogStatus.INFO, "Assert Pass as condition is True");
 		}
 		catch (StaleElementReferenceException e) {
-			//Click(GetQuote.NextButton);
-			//ExtentReportsClass.endreport();
 			throw e;
 		}
 
@@ -117,11 +106,8 @@ public class CreateQuoteStepsJSON extends CommonFunctions {
 			Click(PersonalDetailsPage2.Calendar);
 			Click(PersonalDetailsPage2.OkButton);
 			SendKeys(PersonalDetailsPage2.PINCODE, PinCode);
-			//ExtentReportsClass.test = ExtentReportsClass.extent.startTest("Filled Email Address, DOB and Pincode");
-			//ExtentReportsClass.test.log(LogStatus.INFO, "Assert Pass as condition is True");
 		}
 		catch (Exception e) {
-			//ExtentReportsClass.endreport();
 			throw e;
 		}
 	}
@@ -132,12 +118,9 @@ public class CreateQuoteStepsJSON extends CommonFunctions {
 		try
 		{
 			Click(BuyingForPage.JustMe);
-			//ExtentReportsClass.test = ExtentReportsClass.extent.startTest("Selected buying option");
-			//ExtentReportsClass.test.log(LogStatus.INFO, "Assert Pass as condition is True");
 		}
 
 		catch (Exception e) {
-			//ExtentReportsClass.endreport();
 			throw e;
 		}
 
@@ -148,15 +131,11 @@ public class CreateQuoteStepsJSON extends CommonFunctions {
 
 		try
 		{
-			//ExplicitWait(GetQuote.AllAtOnce);
 			Thread.sleep(3000);
 			Click(ReceiveBenefitsPage.AllAtOnce);
-			//ExtentReportsClass.test = ExtentReportsClass.extent.startTest("Selected how to receive benefit option");
-			//ExtentReportsClass.test.log(LogStatus.INFO, "Assert Pass as condition is True");
 		}
 
 		catch (Exception e) {
-			//ExtentReportsClass.endreport();
 			throw e;
 		}
 
@@ -201,18 +180,13 @@ public class CreateQuoteStepsJSON extends CommonFunctions {
 
 		try
 		{
-			//ExcelUtils.setExcelFile(PropertyFileReader.Path_TestData, "Sheet1");
 			ExplicitWait(PlanSummaryPage.QuoteNo);
 			String QuoteNumber=GetText(PlanSummaryPage.QuoteNo);
 			String[] Quote=QuoteNumber.split(":");
 			System.out.println("Quote Number :"+Quote[1].trim());
-			//ExtentReportsClass.test = ExtentReportsClass.extent.startTest("Quote Number Displayed");
-			//ExtentReportsClass.test.log(LogStatus.INFO, "Assert Pass as condition is True");
-			//ExcelUtils.setCellData(Quote[1].trim(), 1, 6);
 		}
 
 		catch (Exception e) {
-			//ExtentReportsClass.endreport();
 			throw e;
 		}
 

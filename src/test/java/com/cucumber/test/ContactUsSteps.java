@@ -8,11 +8,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.ITestResult;
 
-import com.constants.CommonFunctions;
-import com.constants.PropertyFileReader;
-import com.constants.ExcelReader;
 import com.pom.ContactUsPage;
 import com.pom.UploadFilePOM;
+import com.utils.CommonFunctions;
+import com.utils.ExcelReader;
+import com.utils.PropertyFileReader;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

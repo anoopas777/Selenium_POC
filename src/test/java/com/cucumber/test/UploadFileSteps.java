@@ -1,10 +1,11 @@
 package com.cucumber.test;
 
 import org.testng.Assert;
-import com.constants.CommonFunctions;
+
 //import com.constants.ExtentReportsClass;
 import com.pom.UploadFilePOM;
 //import com.relevantcodes.extentreports.LogStatus;
+import com.utils.CommonFunctions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

@@ -1,7 +1,8 @@
 package com.pom;
 
 import org.openqa.selenium.By;
-import com.constants.CommonFunctions;
+
+import com.utils.CommonFunctions;
 
 public class ContactUsPage extends CommonFunctions{
 	
